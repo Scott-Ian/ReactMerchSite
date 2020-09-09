@@ -43,7 +43,7 @@ function NewMerchForm(props) {
   );
 }
 
-newMerchForm.propTypes = {
+NewMerchForm.propTypes = {
   onNewMerchCreation: PropTypes.func
 };
 

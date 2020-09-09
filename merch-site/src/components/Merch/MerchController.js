@@ -1,5 +1,6 @@
 import React from 'react';
 import NewMerchForm from './NewMerchForm';
+import MerchList from "./MerchList";
 
 class MerchController extends React.Component {
 
@@ -12,9 +13,9 @@ class MerchController extends React.Component {
   }
 
   handleClick = () => {
-    this.setState({
-      formVisibleONPage: !prevState.formVisibleOnPage
-    })
+    this.setState(prevState => ({
+      formVisibleOnPage: !prevState.formVisibleOnPage
+    }));
   }
 
   handleAddingNewMerchToList = (newMerch) => {
