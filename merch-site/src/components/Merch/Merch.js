@@ -11,6 +11,7 @@ function Merch(props) {
         <h3>{props.cost} - {props.quantity}</h3>
         <button onClick={props.buyFunc}>Buy Now!</button>
         <button onClick={props.editFunc}>Edit Item</button>
+        <button onClick={props.deleteFunc}>Delete Item</button>
       </div>
     </React.Fragment>
   );
