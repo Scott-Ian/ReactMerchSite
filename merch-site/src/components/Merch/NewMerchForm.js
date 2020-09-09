@@ -22,10 +22,12 @@ function NewMerchForm(props) {
         <input
           type='text'
           name='name'
-          placeholder='Product Name' />
+          placeholder='Product Name' 
+          required />
         <textarea
           name='description'
-          placeholder='Product Description' />
+          placeholder='Product Description' 
+          required />
         <input
           type='text'
           name='imageURL'
@@ -33,11 +35,14 @@ function NewMerchForm(props) {
         <input
           type='number'
           name='cost'
-          placeholder='Cost of Product' />
+          placeholder='Cost of Product' 
+          required />
         <input
           type='number'
           name='quantity'
-          placeholder='Number in Stock' />
+          placeholder='Number in Stock' 
+          required />
+        <button type="submit">Add Merch!</button>
       </form>
     </React.Fragment>
   );
