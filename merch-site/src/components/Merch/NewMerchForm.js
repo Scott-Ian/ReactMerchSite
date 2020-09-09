@@ -2,7 +2,7 @@ import React from 'react';
 import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 
-function newMerchForm(props) {
+function NewMerchForm(props) {
 
   function handleNewMerchFormSubmission(event) {
     event.preventDefault();
@@ -11,7 +11,8 @@ function newMerchForm(props) {
       description: event.target.description.value,
       imageURL: event.target.imageURL.value,
       cost: event.target.cost.value,
-      quantity: event.target.quantity.value
+      quantity: event.target.quantity.value,
+      id: v4()
     });
   }
 
@@ -46,5 +47,5 @@ newMerchForm.propTypes = {
   onNewMerchCreation: PropTypes.func
 };
 
-export default newMerchForm;
+export default NewMerchForm;
 

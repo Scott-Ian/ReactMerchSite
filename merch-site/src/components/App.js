@@ -9,7 +9,6 @@ function App() {
       <div class="container">
         <Header />
         <MerchController />
-
       </div>
     </React.Fragment>
   );

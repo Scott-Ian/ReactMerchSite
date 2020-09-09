@@ -1,4 +1,5 @@
 import React from 'react';
+import NewMerchForm from './NewMerchForm';
 
 class MerchController extends React.Component {
 
@@ -10,11 +11,36 @@ class MerchController extends React.Component {
     };
   }
 
+  handleClick = () => {
+    this.setState({
+      formVisibleONPage: !prevState.formVisibleOnPage
+    })
+  }
+
+  handleAddingNewMerchToList = (newMerch) => {
+    const newMasterMerchList = this.state.masterMerchList.concat(newMerch);
+    this.setState({
+      masterMerchList: newMasterMerchList,
+      formVisibleOnPage: false
+    });
+  }
 
   render() {
+    let currentlyVisibleState = null;
+    let buttonText = null;
+
+    if(this.state.formVisibleOnPage) {
+      currentlyVisibleState = <NewMerchForm onNewMerchCreation = {this.handleAddingNewMerchToList} />;
+      buttonText= "Return to Merch List";
+    } else {
+      currentlyVisibleState = <MerchList merchList = {this.state.masterMerchList} />
+      buttonText = "Add Merch";
+    }
+
     return(
       <React.Fragment>
-
+        {currentlyVisibleState}
+        <button onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );
   }
