@@ -6,7 +6,7 @@ import Header from './Header';
 function App() {
   return (
     <React.Fragment>
-      <div class="container">
+      <div className="container">
         <Header />
         <MerchController />
       </div>

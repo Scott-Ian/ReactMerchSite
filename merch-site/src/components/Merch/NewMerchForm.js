@@ -10,8 +10,8 @@ function NewMerchForm(props) {
       name: event.target.name.value,
       description: event.target.description.value,
       imageURL: event.target.imageURL.value,
-      cost: event.target.cost.value,
-      quantity: event.target.quantity.value,
+      cost: parseInt(event.target.cost.value),
+      quantity: parseInt(event.target.quantity.value),
       id: v4()
     });
   }

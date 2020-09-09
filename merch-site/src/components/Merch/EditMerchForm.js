@@ -20,26 +20,27 @@ function EditMerchForm(props) {
         <input
           type='text'
           name='name'
-          placeholder={props.name} 
-          required />
+          placeholder={props.merch.name} 
+          />
         <textarea
           name='description'
-          placeholder={props.description} 
-          required />
+          placeholder={props.merch.description} 
+          />
         <input
           type='text'
           name='imageURL'
-          placeholder={props.description} />
+          placeholder={props.merch.imageURL} 
+          />
         <input
           type='number'
           name='cost'
-          placeholder={props.cost} 
-          required />
+          placeholder={props.merch.cost} 
+          />
         <input
           type='number'
           name='quantity'
-          placeholder={props.quantity} 
-          required />
+          placeholder={props.merch.quantity} 
+          />
         <button type="submit">Add Merch!</button>
       </form>
     </React.Fragment>
@@ -49,11 +50,11 @@ function EditMerchForm(props) {
 EditMerchForm.propTypes = {
   onEditMerchCreation: PropTypes.func,
 
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  description: PropTypes.string,
   imageURL: PropTypes.string,
-  cost: PropTypes.number.isRequired,
-  quantity: PropTypes.number.isRequired,
+  cost: PropTypes.number,
+  quantity: PropTypes.number,
 };
 
 export default EditMerchForm;

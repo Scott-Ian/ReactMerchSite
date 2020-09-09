@@ -11,14 +11,16 @@ function MerchList(props) {
           imgURL = {merch.imgURL}
           cost = {merch.cost}
           quantity = {merch.quantity}
-          key={merch.id}/>
+          editFunc = {props.editFunc}
+          key={merch.key} />
       )}
     </React.Fragment>
   );
 }
 
 MerchList.propTypes = {
-  merchList: PropTypes.array
+  merchList: PropTypes.array,
+  editFunc : PropTypes.func
 };
 
 export default MerchList;
