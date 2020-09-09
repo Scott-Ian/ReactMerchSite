@@ -1,6 +1,7 @@
 import React from 'react';
 import NewMerchForm from './NewMerchForm';
 import MerchList from "./MerchList";
+import EditMerchForm from './EditMerchForm';
 
 class MerchController extends React.Component {
 
@@ -24,6 +25,31 @@ class MerchController extends React.Component {
       masterMerchList: newMasterMerchList,
       formVisibleOnPage: false
     });
+  }
+
+  handleEditMerch = (merch) => {
+    // let newMasterMerchList = this.state.masterMerchList;
+    
+    // const merchIndex = this.state.masterMerchList.find(e => e.id === merch.id);
+    // newMasterMerchList[merchIndex] = merch;
+
+    const newMasterMerchList = this.state.masterMerchList.map(function(element) {
+      if(element.id != merch.id) {
+        return element;
+      } else {
+        return merch;
+      }
+    });
+
+    this.setState({
+      masterMerchList: newMasterMerchList,
+      formVisibleOnPage: false
+    });
+  }
+
+  findMerchById = (id) => {
+    const merchIndex = this.state.masterMerchList.find(e => e.id === id);
+    return this.state.masterMerchList[merchIndex];
   }
 
   render() {
